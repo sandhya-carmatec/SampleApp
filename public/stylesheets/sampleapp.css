@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+    margin:0px;
+    padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    color:#333333;
+    background:#f2f2f2;
+}
+ul,li,p,h1,h2,h3,h4,h5,h6
+{
+    margin:0px;
+    padding:0px;
+}
+a
+{
+    text-decoration:none;
+    color:inherit;
+}
+
+img
+{
+    border:0px;
+}
+input::-moz-focus-inner {
+
+    border: 0 none;
+
+}
+.clear
+{
+    clear:both;
+}
+.Ehealth_wrapper_shade
+{
+    width:1030px;
+    height:auto;
+    margin:auto;
+    background-image:url(../images/bg.png);
+    background-repeat:repeat-y;
+    background-position:left top;
+
+}
+.Ehealth_wrapper_shade .Ehealth_wrapper
+{
+    width:1030px;
+    height:auto;
+    margin:auto;
+    background:#ffffff;
+}
+
+.banner_image_main
+{
+    width:100%;
+    height:170px;
+    float:left;
+    background-color:#ffffff;
+    background:url(../images/banner_bg.jpg);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    border-bottom:2px solid #40a5d2;
+}
+
+.common_inp_select
+{
+    width:178px;
+    height:auto;
+    float:left;
+    border:1px solid #8cabc0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left:7px;
+    font-size:11px;
+    height:21px;
+}
+
+.common_input_text
+{
+    width:176px;
+    height:auto;
+    float:left;
+    border:1px solid #8cabc0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left:7px;
+    font-size:12px;
+}
+
+.common_textarea_popup
+{
+    width:177px;
+    height:85px;
+    float:left;
+    border:1px solid #8cabc0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    resize:none;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333333;
+    font-size:12px;
+    margin-left: 7px;
+}
+
+.right_input .ventor_input_radio
+{
+    width:auto;
+    height:auto;
+    float:left;
+    vertical-align:middle;
+    display:inline;
+}
+
+.right_input
+{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.vendor_error_msg1 {
+    clear: left;
+    color: red;
+    float: left;
+    padding: 2px 0 0 12px;
+    text-align: left;
+}

@@ -1,0 +1,56 @@
+<%= form_for @profile, :html => {:multipart => true} do |f| %>
+  <div class="Ehealth_wrapper_shade">
+    <div class="Ehealth_wrapper">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td><%= f.text_field :first_name, :class => "common_input_text"  %></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><%= f.text_field :last_name, :class => "common_input_text" %></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>Male<%= f.radio_button :gender, "Male", :class => "ventor_input_radio" %>Female<%= f.radio_button :gender, "Female", :class => "ventor_input_radio" %></td>
+        </tr>
+        <tr>
+          <td>Date Of Birth</td>
+          <td><%=  f.date_select :date_of_birth,:start_year => 1900, :class => "common_inp_select"   %></td>
+        </tr>
+        <tr>
+          <td>Mobile Number</td>
+          <td><%= f.text_field :mobile_no, :class => "common_input_text" %></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><%= f.text_area :address, :class => "common_textarea_popup" %></td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td><%= f.text_field :city, :class => "common_input_text" %></td>
+        </tr>
+        <tr>
+          <td>State</td>
+          <td><%= f.text_field :state, :class => "common_input_text" %></td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td><%= f.country_select :country, ["United States"],{}, :class => "common_inp_select" %></td>
+        </tr>
+        <tr>
+          <td>Pin Code</td>
+          <td><%= f.text_field :pin_code, :class => "common_input_text" %></td>
+        </tr>
+        <tr>
+          <td>Profile Photo</td>
+          <td><%= f.file_field :profile_photo, :size => '20x2' %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= f.submit %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<% end %>

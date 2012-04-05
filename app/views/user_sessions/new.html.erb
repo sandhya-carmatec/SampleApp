@@ -1,0 +1,26 @@
+<%= form_for @user_session,:url => user_sessions_path do |f| %>
+  <table  border="0" style="margin-top: 146px;" align="center">
+    <tr>
+      <td>
+        Username:
+      </td>
+      <td>
+        <%= f.text_field :login, :class => "common_input_text" %>
+        <div class="vendor_error_msg1"><%= validation_errors @user_session.errors['login'] %></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Password:
+      </td>
+      <td>
+        <%= f.password_field :password, :class => "common_input_text" %>
+        <%= validation_errors @user_session.errors['password'] %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.submit 'Login' %></td>
+      <td><%= link_to "Forgot Password?", {:controller =>"user_sessions", :action => "forgot_password"} %></td>
+    </tr>
+  </table>
+<% end %>
