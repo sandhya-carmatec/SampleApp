@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   before_filter :require_user, :only => [:show, :edit, :update]
   def new
     @user = User.new
+    render :layout => false
   end
 
   def signup
     @user = User.new
+    render :layout => false
   end
 
   def create
@@ -16,7 +18,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
       redirect_to '/'
     else
-      render :action => :new
+      flash[:error] = "Error while creating account, plz try again.."
+      render :action => :new,:layout => false
     end
   end
 
@@ -50,6 +53,7 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       render :action => :new
+      render :layout => false
     end
   end
 end

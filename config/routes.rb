@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :locations
+
   root :to => "user_sessions#new"
   #  get "user_sessions/new"
   #  resources :user_sessions

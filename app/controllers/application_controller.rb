@@ -1,6 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_session, :current_user
+  layout :get_layout
+
+  def get_layout
+    if current_user
+      return 'application'
+    else
+      return '_flash_messages'
+    end
+  end
+
   private
   def current_user_session
     logger.debug "ApplicationController::current_user_session"

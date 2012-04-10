@@ -1,47 +1,40 @@
-<table>
-  <tr>
-    <td width="40%"></td>
-    <td width="60%">
-      <%= form_for @user, :html => { :multipart => true } do   |form| %>
+<%= form_for @user, :html => { :multipart => true } do   |form| %>
 
-        <table>
-          <tr><td>
-              <%= form.label :login, "Login" %>
-            </td><td>
-              <%= form.text_field :login, :class => "common_input_text" %>
-              <div style='color: red;'><%= validation_errors @user.errors['login'] %></div>
+  <table style="margin-top: 14px;">
+    <tr><td>
+        <%= form.label :login, "Login" %>
+      </td><td>
+        <%= form.text_field :login, :class => "common_input_text" %>
+        <div style='color: red;'><%= validation_errors @user.errors['login'] %></div>
 
-            </td></tr>
-          <tr><td>
-              <%= form.label :email, "Email" %>
-            </td><td>
-              <%= form.text_field :email, :class => "common_input_text" %>
-              <div style='color: red;'><%= validation_errors @user.errors['email'] %></div>
+      </td></tr>
+    <tr><td>
+        <%= form.label :email, "Email" %>
+      </td><td>
+        <%= form.text_field :email, :class => "common_input_text" %>
+        <div style='color: red;'><%= validation_errors @user.errors['email'] %></div>
 
-            </td></tr>
+      </td></tr>
 
 
-          <tr><td>
-              <%= form.label :password, "Password" %>
-            </td><td>
-              <%= form.password_field :password, :class => "common_input_text" %>
-              <div style='color: red;'><%= validation_errors @user.errors['password'] %></div>
+    <tr><td>
+        <%= form.label :password, "Password" %>
+      </td><td>
+        <%= form.password_field :password, :class => "common_input_text" %>
+        <div style='color: red;'><%= validation_errors @user.errors['password'] %></div>
 
-            </td></tr>
-          <tr><td>
-              <%= form.label :password_confirmation, "Password confirmation" %>
-            </td><td>
-              <%= form.password_field :password_confirmation, :class => "common_input_text" %>
-              <div style='color: red;'><%= validation_errors @user.errors['password_confirmation'] %></div>
+      </td></tr>
+    <tr><td>
+        <%= form.label :password_confirmation, "Password confirmation" %>
+      </td><td>
+        <%= form.password_field :password_confirmation, :class => "common_input_text" %>
+        <div style='color: red;'><%= validation_errors @user.errors['password_confirmation'] %></div>
 
-            </td></tr>
+      </td></tr>
 
-          <tr>
-            <td><%= form.submit "Register" %></td>
-            <td><%= link_to "Back", login_path %></td>
-          </tr>
-        </table>
-      <% end %>
-    </td>
-  </tr>
-</table>
+    <tr>
+      <td></td>
+      <td><%= form.submit "Register" %><%= button_to_function 'Cancel', "window.location.href= '/login'", :class => 'reset_button' %></td>
+    </tr>
+  </table>
+<% end %>

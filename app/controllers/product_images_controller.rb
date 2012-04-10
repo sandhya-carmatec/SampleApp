@@ -1,2 +1,4 @@
 class ProductImagesController < ApplicationController
+
+  
 end

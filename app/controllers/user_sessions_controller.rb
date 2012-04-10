@@ -1,6 +1,8 @@
 class UserSessionsController < ApplicationController
+  layout false
   def new
     @user_session = UserSession.new
+    render :layout => false
   end
 
   def create
@@ -9,7 +11,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_to home_index_path
     else
-      render :action => :new
+      render :action => :new, :layout => false
     end
   end
 
@@ -46,7 +48,7 @@ class UserSessionsController < ApplicationController
           flash[:error]= "Please enter email address to reset password."
         end
       end
-      render :action => "forgot_password"
+      render :action => "forgot_password", :layout => false
     end
   end          
 

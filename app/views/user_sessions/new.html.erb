@@ -1,5 +1,7 @@
 <%= form_for @user_session,:url => user_sessions_path do |f| %>
-  <table  border="0" style="margin-top: 146px;" align="center">
+  <%= render 'flash_messages' %>
+  <table  border="0" style="margin-top: 14px;" align="center">
+    <h2  style="margin-top: 240px;" align="center" > SampleApp</h2>
     <tr>
       <td>
         Username:
@@ -20,7 +22,7 @@
     </tr>
     <tr>
       <td><%= f.submit 'Login' %></td>
-      <td><%= link_to "Forgot Password?", {:controller =>"user_sessions", :action => "forgot_password"} %></td>
+      <td><%= link_to "Forgot Password?", {:controller =>"user_sessions", :action => "forgot_password"} %>&nbsp&nbsp&nbsp&nbsp<%= link_to "Signup", signup_path %></td>
     </tr>
   </table>
 <% end %>

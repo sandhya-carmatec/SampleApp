@@ -1,7 +1,16 @@
-<h2 style="margin-top: 150px; " align="center">SAMPLE APPLICATION</h2>
-<%if current_user.profile.nil? %>
 
-<%= link_to "Add profile", new_profile_path %>
-<% else %>
-<%= link_to "edit profile", edit_profile_path(@current_user) %>
-<% end %>
+
+<%#*<table style="margin-top: 800px;" >%>
+  <%#*<tr>%>
+    <%#*<td >%>
+      <%#if current_user.profile.nil? %>
+        <%#= link_to "Add profile", new_profile_path %>
+      <%# else %>
+        <%#= link_to "edit profile", edit_profile_path(@current_user) %>
+      <%# end %>
+    <%#*</td>%>
+    <%#*<td>%>
+    <%#*</td>%>
+  <%#*</tr>%>
+
+<%#*</table>%>

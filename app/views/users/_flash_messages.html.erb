@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>SampleApp</title>
+    <%= stylesheet_link_tag 'application', 'jquery.notifyBar', 'sampleapp' %>
+<%#= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery', 'jquery.notifyBar', 'application' %>
+    <%= csrf_meta_tag %>
+    <% if !flash[:error].nil? or !flash[:notice].nil? %>
+      <script>
+        $(function () {
+          $.notifyBar({
+            html: "<%= !flash[:error].nil? ? flash[:error] : flash[:notice] -%>",
+            cls: "<%= !flash[:error].nil? ? 'error' : 'success' -%>",
+            close: true,
+            delay: 2500,
+            animationSpeed: "normal"
+          });
+        });
+      </script>
+    <% end %>
+  </head> 
+</html>
