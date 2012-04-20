@@ -14,6 +14,8 @@ gem 'paperclip', "~> 2.3"
 gem "will_paginate", "3.0.pre2"
 gem "heroku", "~> 2.21.3"
 gem "gmaps4rails", "~> 1.4.8"
+gem "json", "~> 1.6.5"
+gem 'jquery-rails', '>= 1.0.12'
 # Use unicorn as the web server
 # gem 'unicorn'
 

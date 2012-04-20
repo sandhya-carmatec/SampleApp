@@ -1,0 +1,38 @@
+<div id="content">
+  <div align="right">
+    <%= link_to "New Article", new_article_path %>
+  </div>
+  <% @articles.each do |article| %>
+    <h2><%= article.name %></h2>
+    <p class="author"><em>from <%=h article.author_name %></em></p>
+    <%= truncate( article.content.to_s.gsub(/<\/?.*?>/, ""), :length => 200) %>
+  <%#=simple_format article.content %>
+
+    <p>
+      <%= link_to "Show", article_path(article) %> |
+      <%= link_to "Edit", edit_article_path(article) %> |
+      <%= link_to "Destroy", @article, :method => :delete, :confirm => "Are you sure?" %>
+    </p>
+  <% end %>
+</div>
+
+
+<%# title "Articles" %>
+<%#*<div id="calendar">%>
+<%#*<h2 id="month">%>
+<%#= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
+<%#=h @date.strftime("%B %Y") %>
+<%#= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m") %>
+<%#*</h2>%>
+<%#= calendar_for @notes, :year => @date.year, :month => @date.month do |calendar| %>
+<%#= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
+<%#= calendar.day(:day_method => :published_on) do |date, notes| %>
+<%#= date.day %>
+<%#*<ul>%>
+<%# for notes in notes %>
+<%#*<li><%= link_to h(note.name), note %>
+<%# end %>
+<%#*</ul>%>
+<%# end %>
+<%# end %>
+<%#*</div>%>

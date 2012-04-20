@@ -4,9 +4,9 @@
       <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
 
       <ul>
-      <% @location.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -16,10 +16,17 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
   </div>
- 
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
   <div class="field">
     <%= f.label :gmaps %><br />
     <%= f.check_box :gmaps %>

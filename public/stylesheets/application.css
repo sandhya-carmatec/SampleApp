@@ -1,8 +1,72 @@
+#login-box {
+    width:333px;
+    height: 352px;
+    padding: 58px 76px 0 76px;
+    color: #ebebeb;
+    font: 12px Arial, Helvetica, sans-serif;
+    background: url(images/login-box-backg.png) no-repeat left top;
+}
+
+#login-box img {
+    border:none;
+}
+
+#login-box h2 {
+    padding:0;
+    margin:0;
+    color: #ebebeb;
+    font: bold 44px "Calibri", Arial;
+}
+
+
+#login-box-name {
+    float: left;
+    display:inline;
+    width:80px;
+    text-align: right;
+    padding: 14px 10px 0 0;
+    margin:0 0 7px 0;
+}
+
+#login-box-field {
+    float: left;
+    display:inline;
+    width:230px;
+    margin:0;
+    margin:0 0 7px 0;
+}
+
+
+.form-login  {
+    width: 205px;
+    padding: 10px 4px 6px 3px;
+    border: 1px solid #0d2c52;
+    background-color:#1e4f8a;
+    font-size: 16px;
+    color: #ebebeb;
+}
+
+
+.login-box-options  {
+    clear:both;
+    padding-left:87px;
+    font-size: 11px;
+}
+
+.login-box-options a {
+    color: #ebebeb;
+    font-size: 11px;
+}
+
+
+
+
+
 /*
 Design by CSS Templates For Free
 http://www.csstemplatesforfree.com
 Released for free under a Creative Commons Attribution 2.5 License
-*/
+
 
 * {
     margin: 0;
@@ -79,7 +143,7 @@ img.right {
     margin: 0 0 0 20px;
 }
 
-/* Boxed Style */
+ Boxed Style 
 
 .boxed {
 }
@@ -95,7 +159,7 @@ img.right {
     background: url(../images/img05.gif) repeat-x;
 }
 
-/* Post */
+ Post 
 
 .post {
 }
@@ -140,7 +204,7 @@ img.right {
     background: url(../images/img05.gif) repeat-x;
 }
 
-/* Header */
+ Header 
 
 #header {
     width: 760px;
@@ -148,7 +212,7 @@ img.right {
     margin: 0 auto;
 }
 
-/* Header > Logo */
+ Header > Logo 
 
 #logo {
     float: left;
@@ -172,7 +236,7 @@ img.right {
     color: #000000;
 }
 
-/* Header > Menu */
+ Header > Menu 
 
 #menu {
     float: right;
@@ -210,7 +274,7 @@ img.right {
     color: #FFFFFF;
 }
 
-/* Content */
+ Content 
 
 #content {
     width: 760px;
@@ -218,31 +282,31 @@ img.right {
     padding-top: 20px;
 }
 
-/* Content > Main */
+ Content > Main 
 
 #main {
     float: left;
     width: 520px;
 }
 
-/* Content > Main > Welcome */
+ Content > Main > Welcome 
 
 #welcome {
 }
 
-/* Content > Main > Example */
+ Content > Main > Example 
 
 #example {
 }
 
-/* Content > Sidebar */
+ Content > Sidebar 
 
 #sidebar {
     float: right;
     width: 220px;
 }
 
-/* Content > Sidebar > Login */
+ Content > Sidebar > Login 
 
 #login {
 }
@@ -280,7 +344,7 @@ img.right {
     background: url(../images/img05.gif) repeat-x;
 }
 
-/* Content > Sidebar > Updates*/
+ Content > Sidebar > Updates
 
 #updates {
 }
@@ -303,7 +367,7 @@ img.right {
     text-decoration: none;
 }
 
-/* Footer */
+ Footer 
 
 #footer {
     clear: both;
@@ -330,12 +394,121 @@ img.right {
     text-decoration: none;
 }
 
-/* Footer > Legal */
+ Footer > Legal 
 
 #legal {
 }
 
-/* Footer > Links */
+ Footer > Links 
 
 #links {
+}*/
+
+
+.calender_main
+{
+    width:211px;
+    height:195px;
+    float:left;
+    margin-top:12px;
+    margin-bottom:15px;
+}
+.calender_main #memo_calendar
+
+{
+    width:100%;
+    height:195px;
+    float:left;
+}
+
+#memo_calendar table {
+    border: 1px solid #999999;
+    border-collapse: collapse;
+    float: left;
+    height: 10%;
+    position: relative;
+    width: 100%;
+
+}
+
+#memo_calendar td,
+#memo_calendar th {
+    font-family: "Lucida Grande",arial,helvetica,sans-serif;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid #999;
+}
+
+#memo_calendar th {
+    background: none repeat scroll 0 0 #CCCCCC;
+    color: white;
+    font-size: 9px;
+    text-align: center;
+    width: 7.2857%;
+}
+
+#memo_calendar td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    color: #777777;
+    font-size: 10px;
+    height: 26px;
+
+}
+
+#memo_calendar .notmonth {
+    color: #CCC;
+}
+
+#memo_calendar #month {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+#memo_calendar #month a, #memo_calendar #month a:hover {
+    text-decoration: none;
+    padding: 0 8px;
+    color: #red;
+
+}
+
+#memo_calendar .today {
+    background-color: #CCCCCC;
+    color:white;
+    border: 1px solid;
+
+}
+
+#memo_calendar ul {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+    list-style: none;
+    color:red;
+}
+
+#memo_calendar li {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    text-align: center;
+    color:red;
+}
+.input_box_new_common
+{
+    width:222px;
+    height:73px;
+    float:left;
+    border:1px solid #8cabc0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 13px;
+    background:#f5fbff;
+    font-size:12px;
 }

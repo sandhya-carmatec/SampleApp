@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
-  
+  before_filter :require_user
   def index
-    @products = Product.all
+    per_page = params[:per_page] || 10
+    @products = Product.paginate(:page => params[:page], :per_page => per_page)
   end
 
   def new
     @product = Product.new
+    3.times { @product.product_images.build }
   end
 
   def create

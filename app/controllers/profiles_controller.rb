@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
       flash[:notice] = "profile successfully created"
       redirect_to profile_path(@profile)
     else
+      flash[:error] = "Error while creating, plz try again....... "
       render :action => "new"
     end
   end

@@ -1,0 +1,44 @@
+<table width="90%" style="margin-top: -40px;margin-left: 45px;margin-bottom: 45px;background-color: #E3E3E3;">
+  <tr>
+    <td align="center" colspan="2"> <h1>Images</h1></td>
+  </tr>
+  <tr>
+    <td style="padding-left: 50px;width: 30%" valign="top">
+      <div>
+
+        <%= form_tag product_product_images_path(@product), :method => :post, :multipart => true, :id => "add_more_images_form", :name => "add_more_images_form" do %>
+          Add new images
+          <div id="image_fields">
+            <div style="margin-bottom: 5px;"><%= file_field_tag "image_images[]"  %></div>
+          </div>
+          <button class="button" style="margin:0px;">Add</button> <%= link_to_function "Add more+","", :id =>"add_more_images_link" %>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="dealThumbs2" id="product_images">
+        <%= render :partial => "product_images/images" %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<script>
+  $(function() {
+    var scntDiv = $('#image_fields');
+    var i = $('#image_fields input').size() + 1;
+
+    $('#add_more_images_link').live('click', function() {
+      $('<div style="margin-bottom: 5px;" id="'+i+'"><input type="file" name="image_images[]"><a href="javascript:removeImageField('+i+')" id="removeImage">remove</a></div>').appendTo(scntDiv);
+      i++;
+      return false;
+    });
+
+  });
+
+  function removeImageField(num){
+    $("#"+num).remove();
+  }
+</script>

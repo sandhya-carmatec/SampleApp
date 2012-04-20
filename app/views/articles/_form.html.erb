@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  $(function(){
+
+    // Datepicker
+    $('#published_date').datepicker({
+      inline: true
+      //changeMonth: true,
+      //changeYear: true
+    });
+    //hover states on the static widgets
+    $('#dialog_link, ul#icons li').hover(
+    function() { $(this).addClass('ui-state-hover'); },
+    function() { $(this).removeClass('ui-state-hover'); }
+  );
+
+  });
+</script>
+
+<% form_for @article do |f| %>
+  <%= render 'layouts/flash_messages' %>
+  <table>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td>
+        <%= f.text_field :name, :class => "common_input_text"  %>
+        <div class="vendor_error_msg1"><%= validation_errors @article.errors['name'] %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :published_on %></td>
+      <td><%= f.text_field :published_on, :id => 'published_date', :class => "common_input_text"%></td>
+    </tr>
+    <tr>
+      <td><%= f.label :content %></td>
+      <td>
+        <%= f.text_area :content, :class => "common_textarea_popup" %>
+        <div class="vendor_error_msg1"><%= validation_errors @article.errors['content'] %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :author_name %></td>
+      <td>
+        <%= f.text_field :author_name, :class => "common_input_text"  %>
+        <div class="vendor_error_msg1"><%= validation_errors @article.errors['author_name'] %></div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "Submit" %></td>
+    </tr>
+  </table>
+<% end %>

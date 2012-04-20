@@ -6,6 +6,17 @@ SampleApp::Application.routes.draw do
   #  resources :user_sessions
   resources :home
   resources :profiles
+
+  resources :products
+  resources :articles
+  resources :comments
+
+  resources :memos do
+    collection do
+      get 'new_memo'
+      put 'add_new_memo'
+    end
+  end
   #  match 'login' => "user_sessions#new", :as => :login
   #
   #  match 'logout' => "user_sessions#destroy", :as => :logout

@@ -1,0 +1,101 @@
+<script type="text/javascript">
+  $(function(){
+
+    // Datepicker
+    $('#from_date').datepicker({
+      inline: true
+      //changeMonth: true,
+      //changeYear: true
+    });
+
+    $('#to_date').datepicker({
+      inline: true
+    });
+
+    $('#expire_date').datepicker({
+      inline: true
+    });
+
+    //hover states on the static widgets
+    $('#dialog_link, ul#icons li').hover(
+    function() { $(this).addClass('ui-state-hover'); },
+    function() { $(this).removeClass('ui-state-hover'); }
+  );
+
+  });
+</script>
+<%= form_for @product, :html => {:multipart => true} do |f| %>
+  <table>
+    <tr>
+      <td>Product Title </td>
+      <td><%= f.text_field :name, :class => "common_input_text"  %></td>
+    </tr>
+    <tr>
+      <td>Product Type</td>
+      <td><%= f.select :category_id, options_for_select((Category.all(:select => "name, id").map {|r| [r.name,r.id] }), @product.category_id ),{}, :class => "common_inp_select" %></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><%= f.text_area :description, :class => "common_textarea_popup" %></td>
+    </tr>
+    <tr>
+      <td valign="top">Start Date:</td>
+      <td>
+        <%= f.text_field  :start_date, :id => 'from_date', :class => "common_input_text"%>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">End Date:</td>
+      <td>
+        <%= f.text_field :end_date, :id => 'to_date', :class => "common_input_text"%>
+      </td>
+    </tr>
+    <tr>
+      <td>credit price</td>
+      <td><%= f.text_field :credit_price, :class => "common_input_text" %></td>
+    </tr>
+    <tr>
+      <td>purchase price</td>
+      <td><%= f.text_field :purchase_price, :class => "common_input_text" %></td>
+    </tr>
+    <tr>
+      <td>Discount Price</td>
+      <td><%= f.text_field :discount_price, :class => "common_input_text" %></td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td><%= f.text_field :status, :class => "common_input_text" %></td>
+    </tr>
+    <tr>
+      <td>Store Image</td>
+      <td><%= f.file_field :store_image, :size => '20x2',  %></td>
+    </tr>
+    <tr>
+      <td valign="top">Images:</td>
+      <td>
+        <%= f.fields_for :product_images do |builder| %>
+          <%= builder.file_field :image, :size => '20x2',   %> <br /><br />
+        <%end%>
+        <div>
+          <%= link_to_add_fields "Add More Images+", f, :product_images %>
+        </div>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit %></td>
+    </tr>
+
+  </table>
+
+<% end %>
+
+<% if !@product.new_record? %>
+  <div style="clear: both"></div>
+  <div style="clear: both"></div>
+  <div id="product_images">
+    <%= render :partial => "product_images/index" %>
+  </div>
+  <div style="clear: both"></div>
+<% end %>

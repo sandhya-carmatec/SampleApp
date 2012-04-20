@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410071152) do
+ActiveRecord::Schema.define(:version => 20120417042757) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "author_name"
+    t.date     "published_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -19,12 +28,32 @@ ActiveRecord::Schema.define(:version => 20120410071152) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "article_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "site_url"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
-    t.string   "address"
+    t.string   "street"
+    t.string   "city"
+    t.string   "country"
     t.float    "longitude"
     t.float    "latitude"
     t.boolean  "gmaps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memos", :force => true do |t|
+    t.text     "memo"
+    t.string   "created_by"
+    t.date     "memo_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,8 +70,8 @@ ActiveRecord::Schema.define(:version => 20120410071152) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.date     "start_time"
-    t.date     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
     t.float    "credit_price"
     t.float    "purchase_price"
     t.float    "discount_price"

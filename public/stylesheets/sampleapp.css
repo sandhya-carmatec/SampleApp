@@ -1,146 +1,177 @@
 @charset "utf-8";
 /* CSS Document */
-body
-{
-    margin:0px;
-    padding:0px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:14px;
-    color:#333333;
-    background:#f2f2f2;
-}
-ul,li,p,h1,h2,h3,h4,h5,h6
-{
-    margin:0px;
-    padding:0px;
-}
-a
-{
-    text-decoration:none;
-    color:inherit;
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
 }
 
-img
-{
-    border:0px;
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
 }
-input::-moz-focus-inner {
 
-    border: 0 none;
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
 
+div.field, div.actions {
+    margin-bottom: 10px;
 }
-.clear
-{
-    clear:both;
+
+#notice {
+    color: green;
 }
-.Ehealth_wrapper_shade
+
+
+
+
+
+#container
 {
-    width:1030px;
+    margin: 0 auto;
+    width: 900px;
+    background: #fff;
+}
+
+#header
+{
+    background: #ccc;
+    padding: 40px;
+}
+
+#header h1 { margin: 0; }
+
+#navigation
+{
+    float: left;
+    width: 900px;
+    background: #333;
+}
+
+#navigation ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+#navigation ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+#navigation li a
+{
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+}
+
+#navigation li a:hover { background: #383; }
+
+#content-container
+{
+    float: right;
+    width: 1000px;
+    background: #fff url(/wp-content/uploads/layout-two-fixed-background.gif) repeat-y 100% 0;
+}
+
+#content
+{
+    clear: right;
+    float: right;
+    width: 650px;
+    padding: 5px 0;
+    margin: 0 0 0 10px;
+    display: inline;
+}
+
+#content h2 { margin: 0; }
+
+#aside
+{
+
+    float: left;
+    width: 240px;
+    padding: 20px 0;
+    margin: 0 0px 0 0;
+    display: inline;
+}
+
+#aside h3 { margin: 0; }
+
+#footer
+{
+    clear: both;
+    background: #ccc;
+    text-align: right;
+    padding: 20px;
+    height: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.user_status
+{
+    width:190px;
     height:auto;
-    margin:auto;
-    background-image:url(../images/bg.png);
-    background-repeat:repeat-y;
-    background-position:left top;
-
+    float:right;
+    margin-top: 7px;
 }
-.Ehealth_wrapper_shade .Ehealth_wrapper
+.user_status .user_status_image
 {
-    width:1030px;
+    width:auto;
     height:auto;
-    margin:auto;
-    background:#ffffff;
+    float:left;
 }
-
-.banner_image_main
+.user_status .user_status_image img
+{
+    width:43px;
+    height:43px;
+}
+.user_status .user_status_text
+{
+    width:140px;
+    height:auto;
+    float:right;
+}
+.user_status_text .logged_in
 {
     width:100%;
-    height:170px;
-    float:left;
-    background-color:#ffffff;
-    background:url(../images/banner_bg.jpg);
-    background-repeat:repeat-x;
-    background-position:left bottom;
-    border-bottom:2px solid #40a5d2;
-}
-.banner_image_main .banner_image_right
-{
-    width:750px;
-    float:right;
     height:auto;
+    float:left;
+    color:#008000;
+    margin-top:2px;
 }
-.footer
+.user_status_text .logged_in_name
 {
     width:100%;
     height:auto;
     float:left;
-    margin-top:16px;
+    color:#000FF;
+    font-weight:bold;
+    margin-top:4px;
 }
-.footer .footer_left
-{
-    width:227px;
-    min-height:73px;
-    float:left;
-    background:url(../images/footer_left.png);
-    background-repeat:repeat-x;
-    background-position:left top;
-}
-.footer .footer_mid
-{
-    width:52px;
-    min-height:73px;
-    float:left;
-    background:url(../images/footer_mid.png);
-    background-repeat:repeat-x;
-    background-position:left top;
-}
-.footer .footer_right
-{
-    width:745px;
-    min-height:73px;
-    float:left;
-    background:url(../images/footer_right.png);
-    background-repeat:repeat-x;
-    background-position:left top;
-}
-.footer_left .copyright
-{
-    width:auto;
-    height:auto;
-    float:left;
-    color:#333333;
-    margin: 26px 0 0 20px;
-}
-.footer_right .footer_right_Ulist
-{
-    width:auto;
-    height:auto;
-    float:right;
-    margin-top:13px;
-}
-.footer_right .footer_right_Ulist li
-{
-    width:auto;
-    height:auto;
-    float:left;
-    list-style:none;
-    display:inline;
-}
-.footer_right .footer_right_Ulist li a
-{
-    width:auto;
-    height:auto;
-    float:left;
-    color:#ffffff;
-    padding:0px 9px;
-}
-.footer_right .footer_right_Ulist li a:hover
-{
-    color:#92c90e;
-}
-.footer_right_Ulist span
-{
-    color:#ffffff;
-}
+
+
+
+
 
 
 .common_inp_select
@@ -208,147 +239,27 @@ input::-moz-focus-inner {
     text-align: left;
 }
 
-
-.banner_image_main
+.input_box_new_common
 {
-    width:100%;
-    height:170px;
+    width:222px;
+    height:73px;
     float:left;
-    background-color:#ffffff;
-    background:url(../images/banner_bg.jpg);
-    background-repeat:repeat-x;
-    background-position:left bottom;
-    border-bottom:2px solid #40a5d2;
+    border:1px solid #8cabc0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 13px;
+    background:#f5fbff;
+    font-size:12px;
 }
-.banner_image_main .banner_image_right
-{
-    width:750px;
-    float:right;
-    height:auto;
-}
-.banner_image_right .banner_image_right_text
+
+.bottom_button_left_curve
 {
     width:auto;
-    float:left;
-    height:auto;
-    color:#329ecf;
-    font-size:30px;
-    font-family:Arial, Helvetica, sans-serif;
-    margin-top:50px;
-}
-.banner_image_right .banner_image
-{
-    width:auto;
+    height:24px;
     float:right;
-    height:auto;
-
-    margin-top: -36px;
-    margin-right:40px;
-}
-
-.Ehealth_pateint_wrapper_shade
-{
-    width:1048px;
-    height:auto;
-    margin:auto;
-    background-image:url(../images/bg.png);
-    background-repeat:repeat-y;
+    background-image:url(../images/bottom_button_left.jpg);
+    background-repeat:no-repeat;
     background-position:left top;
-}
-.Ehealth_pateint_wrapper_shade .Ehealth_patient_MWrapper
-{
-    width:1024px;
-    height:auto;
-    margin:auto;
-    background:#ffffff;
-}
-
-.menu_color
-{
-    color: darkgoldenrod;
-}
-.title_color
-{
-    color: #329ecf
-}
-.user_status
-{
-    width:190px;
-    height:auto;
-    float:right;
-    margin-top: 7px;
-}
-.user_status .user_status_image
-{
-    width:auto;
-    height:auto;
-    float:left;
-}
-.user_status .user_status_image img
-{
-    width:43px;
-    height:43px;
-}
-.user_status .user_status_text
-{
-    width:140px;
-    height:auto;
-    float:right;
-}
-.user_status_text .logged_in
-{
-    width:100%;
-    height:auto;
-    float:left;
-    color:#008000;
-    margin-top:2px;
-}
-.user_status_text .logged_in_name
-{
-    width:100%;
-    height:auto;
-    float:left;
-    color:#000FF;
-    font-weight:bold;
-    margin-top:4px;
-}
-
-.navigation
-{
-    width:auto;
-    height:auto;
-    float:left;
-}
-.navigation .navigation_Ulist
-{
-    width:auto;
-    height:auto;
-    float:left;
-    margin-top:20px;
-}
-.navigation .navigation_Ulist li
-{
-    width:auto;
-    height:auto;
-    float:left;
-    display:inline;
-    list-style:none;
-}
-.navigation .navigation_Ulist li a
-{
-    width:auto;
-    height:auto;
-    float:left;
-    padding:0px 20px;
-    font-weight:bold;
-    color:#ffffff;
-}
-.navigation .navigation_Ulist li a:hover
-{
-    color:#03233a;
-}
-.navigation .navigation_Ulist li a.menu_selcted
-{
-    color:#03233a;
-    cursor:default;
+    margin-right: 18px;
 }

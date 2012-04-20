@@ -7,7 +7,7 @@
 
 <p>
   <b>Address:</b>
-  <%= @location.address %>
+<%= @location.street %>&nbsp;&nbsp;<%= @location.city %>&nbsp;&nbsp;<%= @location.street %>
 </p>
 
 <p>
@@ -28,3 +28,4 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+<%= gmaps4rails(@json) %>

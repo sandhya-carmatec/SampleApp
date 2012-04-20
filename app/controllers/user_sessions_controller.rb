@@ -11,6 +11,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_to home_index_path
     else
+      flash[:error] = "Error while Login Plz try again"
       render :action => :new, :layout => false
     end
   end

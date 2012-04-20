@@ -1,0 +1,26 @@
+<%= form_tag "/memos/add_new_memo", :method => :put do %>
+  <input name="memo_date" type="hidden" value="<%= @memo_date %>" />
+
+  <table style="width:99.5%;float:left" border="0" cellpadding="0" cellspacing="0" >
+    <tr style="width:100%;float:left">
+      <td colspan="2" style="width:100%;float:left">
+        <h2>New Memo</h2>
+      </td>
+    </tr>
+    <tr style="width:100%;float:left;padding-top: 32px;">
+      <td style="width:30%;vertical-align: top;float:left;text-align: right" >Enter Memo *: </td>
+      <td style="width:65%;float:left"><%= text_area_tag :memo, nil, :class => "input_box_new_common", :size => 20 %>
+      </td>
+    </tr>
+    <tr style="width:100%;float:left" >
+      <td colspan="2" style="width:100%;float:left;">
+        <span class="bottom_button_left_curve" style="float: right;margin:5px 41px 0px 0px">
+          <%= submit_tag 'Ok' %>
+        </span>
+      </td>
+
+    </tr>
+  </table>
+
+<% end %>
+

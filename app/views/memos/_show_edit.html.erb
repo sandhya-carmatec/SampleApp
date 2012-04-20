@@ -1,0 +1,39 @@
+
+<%= form_tag "/memos/update", :method => :put do %>
+  <input name="memo_date" type="hidden" value="<%= @memo_date %>" />
+  <input name="name" type="hidden" value="<%= @memo.created_by %>" />
+ 
+    <table style="width:99%;float:left" border="0" cellpadding="0" cellspacing="0">
+      <tr style="width:100%;float:left">
+        <td colspan="2" style="width:100%;float:left">
+          <h2>Edit Memo</h2>
+        </td>
+      </tr>
+      <tr style="width:100%;float:left;padding-top: 10px;" class="scroll_edit_popup">
+        <td style="width:100%;float:left" colspan="2">
+
+          <table style="width:100%;float:left" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="width:30%;vertical-align: top;float:left;text-align: right" >Memo:</td>
+              <td style="width:65%;float:left;padding-left: 15px;"><%= @memo.memo %> </td>
+            </tr>
+            <tr style="width:100%;float:left;padding-top: 10px;">
+              <td style="width:30%;vertical-align: top;float:left;text-align: right" >Edit Memo *: </td>
+              <td style="width:65%;float:left"><%= text_area_tag :memo, nil, :class => "input_box_new_common", :size => 20 %>
+              </td>
+            </tr>
+            <tr style="width:100%;float:left" >
+              <td colspan="2" style="width:100%;float:left;">
+                <span class="bottom_button_left_curve" style="float: right;margin:5px 41px 0px 0px">
+                  <%= submit_tag 'Update' %>
+                </span>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+
+<% end %>
+

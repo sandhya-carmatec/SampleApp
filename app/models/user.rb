@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   acts_as_authentic
   attr_accessible :password, :password_confirmation, :login, :email
+  validates :email, :presence => true,
+
+    :length => {:minimum => 3, :maximum => 254},
+    :uniqueness => true,
+    :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
   has_one :profile, :dependent => :destroy
 
