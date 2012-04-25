@@ -17,6 +17,10 @@ SampleApp::Application.routes.draw do
       put 'add_new_memo'
     end
   end
+
+#  scope '/:video_type' do
+    resources :videos
+#  end
   #  match 'login' => "user_sessions#new", :as => :login
   #
   #  match 'logout' => "user_sessions#destroy", :as => :logout

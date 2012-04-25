@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417042757) do
+ActiveRecord::Schema.define(:version => 20120423054838) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -127,5 +127,20 @@ ActiveRecord::Schema.define(:version => 20120417042757) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "state"
+    t.string   "filename"
+    t.string   "content_type"
+    t.integer  "size"
+    t.string   "video_type"
+    t.string   "video_content_type"
+    t.string   "video_file_name"
+    t.integer  "video_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

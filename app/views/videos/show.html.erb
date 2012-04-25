@@ -1,0 +1,96 @@
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div class="titletext">
+  <table width="700" align="center" cellpadding="1" cellspacing="0" border="0">
+    <tr>
+      <td>
+        <div id="welcome">
+          <div style="float:left;">
+            <h4>
+              <%=  params[:video_type] == 'app_monitor' ? 'AppMonitor' : (params[:video_type] == 'portal' ? 'Portal' : 'vCloud')    %> How-to Videos
+              &nbsp;
+            </h4>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"  valign="top" class="subtabhead" align="right">
+        <% if current_user.is_superadmin %>
+          <%= link_to 'View All How-to videos', videos_path(params[:video_type]) %>
+        <% else %>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td height="350" bgcolor="#E9EEFA" style="border: 1px solid #7593DB;padding-top: 10px;" align="left">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td width="65%" valign="top">
+              <table width="100%" align="left" cellpadding="5" cellspacing="5" class="griditem2">
+                <tr>
+                  <td valign="top">
+                    <a
+                      href="<%= @video.video.url %>"
+                      style="display:block;width:450px;height:300px;z-index: 1px;"
+                      id="player">
+                    </a>
+
+                    <!-- this will install flowplayer inside previous A- tag. -->
+                    <script>
+                      flowplayer("player", {src: "/flowplayer/flowplayer-3.2.6.swf", wmode: "transparent"},
+{
+                        clip: {
+                          autoPlay:false,
+                          autoBuffering:true
+                        }});
+                    </script>
+                    <div style="font-size: 12px;font-weight: bold">
+                      <%= @video.title %>
+                    </div>
+                    <div style="font-size: 12px;font-weight: normal">
+                      <%= @video.description %>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td valign="top" >
+              <div style="color: #1B47B5;padding-left: 20px;border-bottom: 1px solid #7593DB">Related videos</div>
+              <div style="height:430px;overflow:auto">
+                <table width="100%" cellpadding="0" cellspacing="5" class="griditem2" bgcolor="#E9EEFA">
+                  <% for video in @videos do %>
+                      <tr>
+                        <td>
+                          <div>
+                            <% if current_user.is_superadmin %>
+                              <%= link_to image_tag('/images/icons/ban.gif', :border => 0), video_path(params[:video_type],video), :method => 'delete', :confirm => 'Are you sure, you want to delete this video?'  %>
+                            <% end %>
+                            <%= link_to video.title, video_path(params[:video_type], :id => video.id) %>
+                          </div>
+                          <div style="width: 100%">
+                            <div style="width: 40%;float:left">
+                              <%= link_to image_tag(video.tumbnail, :border => "0", :width => "80"), video_path(params[:video_type], :id => video.id), :title => video.title %>
+                            </div>
+                            <div style="width: 60%;float:left;font-size: 12px;font-weight: normal">
+                              <%= video.description %>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </table>
+                </div>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+
+

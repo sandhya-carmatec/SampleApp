@@ -1,0 +1,71 @@
+<style>
+  #help_manual_landing_page a {
+    text-decoration: underline;
+  }
+</style>
+<div>&nbsp;</div>
+<div class="titletext">
+  <table width="700" align="center" cellpadding="1" cellspacing="0" >
+    <tr>
+      <td height="40"  valign="top" class="subtabhead subhead_color">
+          <div style="float:right;"><%= link_to '+ Upload file', new_video_path(params[:video_type]) %></div>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #7593DB;" >
+        <table width="70%" height="500%" align="left" cellpadding="5" cellspacing="5"  style=" background-color: #e9eefa">
+          <tr>
+            <td style="font-size: 14px; padding-left: 10%; width: 70%; padding-top: 2%; " ><span class="h1"><strong><%=  params[:video_type] == 'app_monitor' ? 'AppMonitor' : (params[:video_type] == 'portal' ? 'Customer Portal' : 'vCloud')  %> How-to Videos</strong><br />
+              </span>
+              <div style=" font-size: 13px; font-weight: bold; padding-top: 5px;">This is your gateway to help with the <%=  params[:video_type] == 'app_monitor' ? 'AppMonitor.' : (params[:video_type] == 'portal' ? ' Portal.' : 'vCloud.')  %></div>
+              <hr noshade size="3" style=" color: #6F98CF; list-style: none;"></hr>
+            </td>
+
+          </tr>
+          <% if @videos.empty? %>
+            <tr width:100>
+              <td colspan="3" style="width:100%; height: 25px; padding-left: 13%">
+              <div style=" font-weight: 100; font-size: 13px;">      There are no videos</div>
+              </td>
+            </tr>
+          <% else %>
+            <% for video in @videos %>
+              <tr>
+                <td>
+                  <div style="height:100px">
+                    <div style="width:5%;margin-top: 2%; padding-left: 5%" >
+                      <% if current_user.is_superadmin %>
+                        <%= link_to image_tag('/images/icons/ban.gif', :border => 0), video_path(params[:video_type],video), :method => 'delete', :confirm => 'Are you sure, you want to delete this video?'  %>
+                      <% end %>
+                    </div>
+                    <div style="width:50%;margin-left:10%;margin-top: -3%">
+                      <%= link_to image_tag(video.tumbnail, :border => "0", :width => "100", :height => "75"), video_path(params[:video_type], :id => video.id), :title => video.title %>
+                    </div>
+                    <div style="width:25%;margin-left:25%; margin-top: -11%; text-align: center" align="right">
+                      <%= link_to video.title, video_path(params[:video_type], :id => video.id) %><br />
+                      <%= video.description %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+            <tr>
+              <td style="border: 0px solid #7593DB;">
+                <table width="100%" height="500%" align="left" cellpadding="5" cellspacing="5"  style=" background-color: #e9eefa" class="griditem2 ">
+                  <td style="font-size: 14px; padding-left: 5%;">
+                  <td>Results Per Page&nbsp;&nbsp;<%= select_tag :per_page, options_for_select([10,20,30], @per_page.to_i), :onchange => "get_per_page_url(this.value)" , :class => "textbox" %></td>
+                  <td><%= will_paginate @videos %></td>
+                  <td>Page: <%= params[:page] ? params[:page] : 1%> of <%= @videos.total_pages %></td>
+              </td>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+
+</td></tr> </table>
+
+</div>
+
+

@@ -1,0 +1,91 @@
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+<div class="titletext"><table width="700" align="center" cellpadding="1" cellspacing="0" >
+    <tr>
+      <td>
+        <!--
+        <ul id="nav">
+          <li class="<%#= params[:controller] == 'servers' ? 'on': '' %>">
+            <a href="/servers/help">Portal help</a>
+          </li>
+          <li class="<%#= params[:controller] == 'videos' ? 'on': '' %>">
+<%#= link_to "GNAX Cloud help", videos_path %>
+        </ul>
+        -->
+        <div id="welcome">
+          <div style="float:left;">
+            <h4>
+              Add New <%=  params[:video_type] == 'app_monitor' ? 'AppMonitor' : (params[:video_type] == 'portal' ? 'Portal' : 'vCloud')    %> Video
+              &nbsp;
+            </h4>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"  valign="top" class="subtabhead" align="right">
+        <%# if current_user.is_superadmin %>
+          <%#= link_to '+Upload file', new_video_url %>
+        <%# else %>
+
+        <%# end %>
+      </td>
+    </tr>
+    <tr>
+      <td height="300" bgcolor="#E9EEFA" style="border: 1px solid #7593DB;" align="center">
+        <table width="95%" cellspacing="5" cellpadding="5">
+          <tr>
+            <td>
+              <table width="80%" class="griditem" cellspacing="4" cellpadding="5" >
+                <tr>
+                  <td>
+                    <%= form_for(@video, :html => { :multipart => true }) do |f| %>
+                      <table width="80%" class="griditem" cellspacing="4" cellpadding="5">
+                        <tr>
+                          <td>Title :</td>
+                          <td><%= f.text_field :title, :size => '25x2'  %>
+                            <%= validation_errors(@video.errors[:title]) %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Description :</td>
+                          <td><%= f.text_field :description, :size => '25x2'  %>
+                            <%= validation_errors(@video.errors[:title]) %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Video :</td>
+                          <td><%= f.file_field :video %>
+                            <%= validation_errors(@video.errors[:video]) %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <%= f.submit @video.new_record? ? 'Create' : 'Update', :class => 'btninput' %>
+                            <%= button_to_function 'Cancel',  "window.location.href= '#{videos_path}'", :class => 'btninput'  %></td>
+                        </tr>
+                      </table>
+                    <% end %>
+                  </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table>
+        <br />
+      </td>
+    </tr>
+  </table></div>
+
+
+
+
+
+
+
+
